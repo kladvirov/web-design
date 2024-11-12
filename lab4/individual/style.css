@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #F5EFFF;
+    color: #333;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    color: white;
+    background: url('https://i.pinimg.com/736x/da/40/4b/da404bf7bd4398c9f256c65507d3c860.jpg') center/cover no-repeat;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    position: absolute; /* Абсолютное позиционирование относительно родительского блока */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Корректируем центрирование по обоим осям */
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #A594F9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    animation: fadeIn 1.4s ease-out;
+}
+
+.cta-button:hover {
+    background-color: #CDC1FF;
+    transform: scale(1.05);
+}
+
+/* Разделы контента */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: left;
+}
+
+/* Подвал */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Респонсивность */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-top: 30px;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+}
+

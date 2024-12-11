@@ -1,17 +1,25 @@
-const contactBtn = document.querySelector('.contact-btn');
-const popup = document.getElementById('popup');
-const closeBtn = document.getElementById('close-btn');
+document.addEventListener('DOMContentLoaded', () => {
+    const contactBtn = document.querySelector('.contact-btn');
+    const popup = document.getElementById('popup');
+    const closeBtn = document.getElementById('close-btn');
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navLinks = document.getElementById("navLinks");
 
-contactBtn.addEventListener('click', () => {
-    popup.style.display = 'flex';
-});
+    burgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 
-closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
+    contactBtn.addEventListener('click', () => {
+        popup.style.display = 'flex';
+    });
 
-window.addEventListener('click', (e) => {
-    if (e.target === popup) {
+    closeBtn.addEventListener('click', () => {
         popup.style.display = 'none';
-    }
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
 });

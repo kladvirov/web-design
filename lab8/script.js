@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", loadTasks);
+document.addEventListener("DOMContentLoaded", () => {
+    loadTasks();
+    setupFilters();
+});
 
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById("taskInput");
@@ -32,6 +35,44 @@ function addTask() {
     saveTask(task);
     renderTask(task);
     clearInputs();
+}
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+let currentFilter = localStorage.getItem("taskFilter") || "all";
+
+function setupFilters() {
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            currentFilter = button.id.replace("filter", "").toLowerCase();
+            localStorage.setItem("taskFilter", currentFilter);
+
+            filterTasks();
+        });
+    });
+
+    document.getElementById(`filter${capitalizeFirstLetter(currentFilter)}`).classList.add("active");
+    filterTasks();
+}
+
+function filterTasks() {
+    const tasks = Array.from(taskList.children);
+    tasks.forEach(task => {
+        const isCompleted = task.classList.contains("completed");
+        if (currentFilter === "all") {
+            task.style.display = "";
+        } else if (currentFilter === "completed") {
+            task.style.display = isCompleted ? "" : "none";
+        } else if (currentFilter === "uncompleted") {
+            task.style.display = !isCompleted ? "" : "none";
+        }
+    });
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function saveTask(task) {

@@ -231,7 +231,6 @@ body {
     }
 }
 
-/* Navigation Styling */
 .nav-links.active {
     display: flex;
 }

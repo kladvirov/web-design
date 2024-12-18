@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>website</title>
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <header class="header">
@@ -12,24 +13,24 @@
             <nav class="nav">
                 <button class="burger-menu" id="burgerMenu">&#9776;</button>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#achievements">Мои достижения</a></li>
-                    <li><a href="#technologies">Стэк технологий</a></li>
+                    <li><a href="achievements.html">Мои достижения</a></li>
+                    <li><a href="technologies.html">Стэк технологий</a></li>
                     <li><button class="contact-btn" id="contactBtn">Связаться</button></li>
                 </ul>
             </nav>
         </div>
     </header>    
-    
 
     <div class="popup-menu" id="popup">
         <div class="popup-content">
             <span class="close-btn" id="close-btn">&times;</span>
-            <h3>Свяжитесь со мной:</h3>
-            <ul class="popup-links">
-                <li><a href="mailto:wladponomar@gmail.com">Email</a></li>
-                <li><a href="https://t.me/sheluvssic" target="_blank">Telegram</a></li>
-                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            </ul>
+            <h3>Оставьте свою заявку</h3>
+            <form id="feedbackForm" method="POST">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="email" name="email" placeholder="Ваш email" required>
+                <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
     </div>
 

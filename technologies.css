@@ -1,0 +1,158 @@
+body {
+    background-color: #f0f8ff;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.technologies {
+    background-color: #e6f7ff;
+    padding: 40px 0;
+}
+
+.technologies h2 {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.technologies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.tech-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.tech-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tech-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.skills {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2a2a2a;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #1e90ff);
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
+}
+
+.timeline {
+    background: #ffffff;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.timeline h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2a2a2a;
+}
+
+.timeline-item {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.timeline-content {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #666;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #1e90ff;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media (min-width: 1024px) {
+    .technologies-grid {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .technologies-grid {
+        grid-template-columns: 1fr;
+    }
+}
